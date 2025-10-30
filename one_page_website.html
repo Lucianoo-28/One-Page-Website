@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .gallery img { width: 100%; display: block; border-radius: 8px; cursor: zoom-in; }
+  .lightbox {
+    position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+    background: rgba(0,0,0,.85); z-index: 9999; padding: 24px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox__img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
+  .lightbox__caption { color: #fff; margin-top: 10px; text-align: center; }
+  .lightbox__btn {
+    position: absolute; top: 50%; transform: translateY(-50%); border: none;
+    background: rgba(0,0,0,.4); color: #fff; font-size: 26px; padding: 10px 14px; cursor: pointer; border-radius: 8px;
+  }
+  .lightbox__prev { left: 16px; }
+  .lightbox__next { right: 16px; }
+  .lightbox__close {
+    position: absolute; top: 16px; right: 16px; border: none; background: rgba(0,0,0,.4);
+    color: #fff; font-size: 24px; padding: 8px 12px; cursor: pointer; border-radius: 8px;
+  }
+</style>
+>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Travel Adventures</title>
 </head>
-<body>
+<body<section id="gallery" class="gallery">
+  <a href="images/large/photo1.jpg" data-lightbox>
+    <img src="images/thumbs/photo1.jpg" alt="Photo 1">
+  </a>
+</section>
+>
 
   <!-- Navigation -->
   <nav>
@@ -65,4 +96,5 @@
   </footer>
 
 </body>
+
 </html>
